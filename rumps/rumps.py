@@ -590,10 +590,11 @@ class Timer(object):
                      :class:`rumps.Timer` object as its only parameter.
     :param interval: The time in seconds to wait before calling the `callback` function.
     """
-    def __init__(self, callback, interval):
+    def __init__(self, callback, interval, data=None):
         self.set_callback(callback)
         self._interval = interval
         self._status = False
+        self.data = data
 
     def __repr__(self):
         return ('<{0}: [callback: {1}; interval: {2}; '
